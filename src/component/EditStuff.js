@@ -22,7 +22,13 @@ export default function EdistStuff(props) {
         setDate(new Date(response.data.date));
       })
       .catch((error) => {
-        console.log(error);
+        if (error.response.status == 400) {
+          alert("Data tidak ditemukan!");
+        } else {
+          alert("Telah terjadi error. Mohon untuk mencoba beberapa saat lagi");
+        }
+
+        window.location.href = "/";
       });
   }, []);
 
