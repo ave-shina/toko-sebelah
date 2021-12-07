@@ -12,7 +12,7 @@ const Stuff = (props) => (
     <td>{moment(props.stuff.date.substring(0, 10)).format("ddd, DD MMM YYYY")}</td>
     <td>
       <Link className="edit" to={"/edit/" + props.stuff._id}>
-        edit
+        <i className="fa fa-pencil" aria-hidden="true" style={{ color: "#ffc107" }}></i>
       </Link>{" "}
       |{" "}
       <a
@@ -25,7 +25,7 @@ const Stuff = (props) => (
           }
         }}
       >
-        hapus
+        <i className="fa fa-trash" aria-hidden="true" style={{ color: "#dc3545" }}></i>
       </a>
     </td>
   </tr>

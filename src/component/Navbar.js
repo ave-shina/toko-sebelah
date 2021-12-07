@@ -10,6 +10,7 @@ export default function Navbar() {
             width="30"
             height="30"
             viewBox="0 0 388 340"
+            className="my-auto"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
@@ -20,19 +21,19 @@ export default function Navbar() {
               fill="black"
             />
           </svg>
-          <h3>Toko Sebelah </h3>
+          <h3 className="my-auto mx-3">Toko Sebelah </h3>
         </Link>
       </div>
 
       <div className="navigation-container">
         <Link to="/">
-          <div className="link-rank">
-            <h3>Daftar Barang</h3>
+          <div className="link-rank mx-3">
+            <h5>Daftar Barang</h5>
           </div>
         </Link>
         <Link to="/create">
           <div className="create-button">
-            <h3>+ Tambah Barang</h3>
+            <h5>+ Tambah Barang</h5>
           </div>
         </Link>
       </div>
@@ -58,16 +59,11 @@ const NavbarContainer = styled.div`
   }
 
   .logo {
-    width: 14%;
+    width: 20%;
+  }
+
+  .logo a {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    a {
-      width: 100%;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-    }
   }
   .navigation-container {
     display: flex;

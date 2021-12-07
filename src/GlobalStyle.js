@@ -243,4 +243,18 @@ export const GlobalStyle = createGlobalStyle`
 
   // XX-Large devices (larger desktops, 1400px and up)
   @media (min-width: 1400px) {  }
+
+   /*-----------------*\
+   |      Spacing      |
+   \*-----------------*/
+   // Margin
+   .my-auto {
+     margin-top: auto;
+     margin-bottom: auto;
+   }
+
+   .mx-3 {
+     margin-left: 1rem;
+     margin-right: 1rem;
+   }
 `;
