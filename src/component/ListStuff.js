@@ -55,7 +55,7 @@ export default function ListStuff(props) {
   };
 
   const stuffList = () => {
-    return stuffs.map((currentstuff) => {
+    return stuffs.slice(0).reverse().map((currentstuff) => {
       return (
         <Stuff
           stuff={currentstuff}
