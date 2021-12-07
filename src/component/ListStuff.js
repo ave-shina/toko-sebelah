@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import moment from "moment";
 import styled from "styled-components";
 
 const Stuff = (props) => (
   <tr>
     <td>{props.stuff.username}</td>
-    <td>{props.stuff.price}</td>
-    <td>{props.stuff.duration.substring(0, 10)}</td>
-    <td>{props.stuff.date.substring(0, 10)}</td>
+    <td>{Intl.NumberFormat("id-ID", { style: "currency", currency: "IDR", maximumFractionDigits: 0 }).format(props.stuff.price)}</td>
+    <td>{moment(props.stuff.duration.substring(0, 10)).format("ddd, DD MMM YYYY")}</td>
+    <td>{moment(props.stuff.date.substring(0, 10)).format("ddd, DD MMM YYYY")}</td>
     <td>
       <Link className="edit" to={"/edit/" + props.stuff._id}>
         edit
@@ -43,7 +44,7 @@ export default function ListStuff(props) {
       .catch((error) => {
         console.log(error);
       });
-  });
+  }, []);
 
   const deleteStuff = (id) => {
     axios.delete("http://localhost:5000/stuff/" + id).then((response) => {
